@@ -93,6 +93,10 @@ img {
     display: block;
 }
 
+svg {
+    display: block;
+}
+
 /* Header section */ 
 
 #home {
@@ -121,9 +125,24 @@ img {
     transition: all 0.25s ease;
 }
 
-.social__list > li > a > img:hover, 
+.social__list > li > a > svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+.social__list > li > a > svg > path {
+    fill: var(--light-gray);
+    transition: all 0.25s ease;
+}
+
+/* .social__list > li > a > img:hover, 
 .social__list > li > a:focus {
     filter: brightness(0) invert(1);
+} */
+
+.social__list > li > a > svg:hover > path, 
+.social__list > li > a:focus > svg > path {
+    fill: var(--white);
 }
 
 /* About section */
@@ -170,17 +189,32 @@ img {
 
 .programming-language__list {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     gap: clamp(1rem, 2vw, 2rem);
 }
 
-.programming-language {
+/* .programming-language {
     transition: all 0.25s ease;
     filter: brightness(0) invert(1);
 }
 
 .programming-language:hover {
     filter: brightness(1) invert(0);
+} */
+
+.programming-language > img {
+    width: 4rem;
+    height: 4rem;
+}
+
+/* .programming-language > svg > path {
+    fill: var(--white);
+    transition: all 0.25s ease;
+} */
+
+.programming-language > svg:hover > path {
+    fill: initial;
 }
 
 /* Projects section */
