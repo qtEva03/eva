@@ -89,12 +89,12 @@ a:focus {
     outline: none;
 }
 
-img {
+svg {
     display: block;
 }
 
-svg {
-    display: block;
+path {
+    transition: all 0.25s ease;
 }
 
 /* Header section */ 
@@ -121,27 +121,15 @@ svg {
     gap: 1rem;
 }
 
-.social__list > li > a > img {
-    transition: all 0.25s ease;
-}
-
-.social__list > li > a > svg {
+.social__icon {
     width: 2rem;
     height: 2rem;
-}
 
-.social__list > li > a > svg > path {
     fill: var(--light-gray);
-    transition: all 0.25s ease;
 }
 
-/* .social__list > li > a > img:hover, 
-.social__list > li > a:focus {
-    filter: brightness(0) invert(1);
-} */
-
-.social__list > li > a > svg:hover > path, 
-.social__list > li > a:focus > svg > path {
+.social__icon:hover,
+.social:focus > .social__icon {
     fill: var(--white);
 }
 
@@ -194,27 +182,18 @@ svg {
     gap: clamp(1rem, 2vw, 2rem);
 }
 
-/* .programming-language {
+.programming-language {
     transition: all 0.25s ease;
-    filter: brightness(0) invert(1);
+    filter: brightness(0) invert(99%) sepia(6%) saturate(301%) hue-rotate(170deg) brightness(115%) contrast(75%);
 }
 
 .programming-language:hover {
     filter: brightness(1) invert(0);
-} */
-
-.programming-language > img {
-    width: 4rem;
-    height: 4rem;
 }
 
-/* .programming-language > svg > path {
-    fill: var(--white);
-    transition: all 0.25s ease;
-} */
-
-.programming-language > svg:hover > path {
-    fill: initial;
+.programming-language__icon {
+    width: 4rem;
+    height: 4rem;
 }
 
 /* Projects section */
