@@ -1,8 +1,8 @@
 /* Variables */
 
 :root {
-    --black: #101010;
-    --dark-gray: #191919;
+    --black: #141414;
+    --dark-gray: #1c1c1c;
     --light-gray: #6a6a6a;
     --white: #dfdfdf;
 }
@@ -116,6 +116,33 @@ path {
     text-align: center;
 }
 
+.language__list {
+    display: flex;
+    gap: 1rem;
+}
+
+.language__button {
+    border: none;
+
+    background-color: inherit;
+
+    font-size: 2rem;
+
+    color: var(--light-gray);
+    letter-spacing: 0.25rem;
+
+    transition: all 0.5s ease;
+}
+
+.language__button:hover,
+.language__button:focus {
+    color: var(--white);
+}
+
+.language__button--selected {
+    color: var(--white);
+}
+
 .social__list {
     display: flex;
     gap: 1rem;
@@ -224,13 +251,13 @@ path {
     padding: 2rem 3rem;
     border-radius: 5px;
 
-    transition: all 0.5s cubic-bezier(.25, .8, .25, 1);
+    transition: all 0.5s ease;
 }
 
 .project:hover,
 .project:focus {
     background-color: var(--dark-gray);
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.25), 0px 8px 8px rgba(0, 0, 0, 0.125);
 }
 
 .project__title {
@@ -246,7 +273,7 @@ path {
     align-items: center;
 }
 
-.btn--contact {
+.contact__button {
     padding: 1rem 4rem;
     border-radius: 5px;
 
@@ -260,11 +287,11 @@ path {
     transition: all 0.5s ease;
 }
 
-.btn--contact:hover {
+.contact__button:hover {
     opacity: 0.92;
 }
 
-.btn--contact:focus {
+.contact__button:focus {
     opacity: 0.88;
 }
 
@@ -310,7 +337,7 @@ path {
         font-size: 3rem;
     }
 
-    .btn--contact {
+    .contact__button {
         padding: 0.67rem 3rem;
 
         font-size: 4rem;
@@ -363,7 +390,7 @@ path {
         font-size: 2rem;
     }
 
-    .btn--contact {
+    .contact__button {
         padding: 1rem 2rem;
         font-size: 3rem; 
     }
