@@ -1,3 +1,3 @@
 # Eva 
 
-Upgraded portfolio (version 2.0)
+Upgraded portfolio (version 2.0).
