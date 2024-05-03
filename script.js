@@ -3,6 +3,7 @@ function changeTextLanguage(texts) {
         $(selector).html(content);
     }
 
+    $("html").attr("lang", localStorage.getItem("language"));
     $(".resume").attr("href", `docs/resume_${localStorage.getItem("language")}.pdf`);
 }
 

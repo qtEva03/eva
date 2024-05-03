@@ -1,9 +1,9 @@
 /* Variables */
 
 :root {
-    --black: #141414;
-    --dark-gray: #1c1c1c;
-    --light-gray: #727272;
+    --black: #181818;
+    --dark-gray: #202020;
+    --light-gray: #808080;
     --white: #dfdfdf;
 }
 
@@ -131,7 +131,7 @@ path {
     color: var(--light-gray);
     letter-spacing: 0.25rem;
 
-    transition: all 0.5s ease;
+    transition: all 0.25s ease;
 }
 
 .language__button:hover,
@@ -179,7 +179,7 @@ path {
 }
 
 .about__text { 
-    width: clamp(18rem, 80vw, 64rem);
+    width: clamp(20rem, 90vw, 76rem);
 
     text-align: center;
 }
