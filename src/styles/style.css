@@ -1,0 +1,414 @@
+/* FONTS */
+
+@import url("https://fonts.googleapis.com/css2?family=Niconne&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&display=swap");
+
+/* VARIABLES */
+
+/* TODO vedere se cambiare dark-purple */
+:root {
+    --purple: #9984D4;
+    --dark-purple: #544BA0;
+    --black: #25221E;
+    --grey: #E6E6E6;
+    --white: #FFFFFF;
+}
+
+/* RESET */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body { 
+    padding-left: max(24px, calc(480px + 0.5 * (100vw - 1920px)));
+    padding-right: max(24px, calc(480px + 0.5 * (100vw - 1920px)));
+    background-color: var(--white);
+    line-height: 1;
+}
+
+ol, 
+ul {
+    list-style: none;
+}
+
+blockquote, 
+q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: "";
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* GENERAL */
+
+::selection {
+    background-color: inherit;
+    color: var(--dark-purple);
+}
+
+.contact-button {
+    flex-shrink: 0;
+    transition: filter 0.3s ease;
+    padding-top: 17.5px;
+    padding-bottom: 17.5px;
+    padding-left: clamp(30px,  calc(30px + 15 * ((100vw - 360px) / 408)), 45px);
+    padding-right: clamp(30px,  calc(30px + 15 * ((100vw - 360px) / 408)), 45px);
+    border-radius: 50px;
+    background-color: var(--purple);
+    font-size: clamp(20px,  calc(20px + 4 * ((100vw - 360px) / 408)), 24px);
+    font-family: Inter;
+    font-weight: 700;
+    text-align: center;
+    color: var(--white);
+}
+
+/* TODO fare un hover effect carino */
+.contact-button:hover {
+    filter: brightness(110%);
+}
+
+.contact-button:focus-visible {
+    outline: 2px solid var(--black);
+}
+
+.subheading {
+    font-size: clamp(32px,  calc(32px + 20.5 * ((100vw - 360px) / 408)), 52.5px);
+    font-family: "Libre Franklin";
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.text {
+    font-size: clamp(18px,  calc(18px + 2 * ((100vw - 360px) / 408)), 20px);
+    font-family: "Inter";
+    color: var(--black);
+}
+
+/* HERO SECTION */
+
+/* FORSE cambiare dimensione a 100vh */
+.hero {
+    display: flex;
+    align-items: center;
+    margin-top: 308.75px;
+    margin-bottom: 308.75px;
+}
+
+.hero-wrapper {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.signature {
+    font-size: clamp(28px,  calc(28px + 24.5 * ((100vw - 360px) / 408)), 52.5px);
+    font-family: "Niconne";
+    color: var(--black);
+}
+
+.heading { 
+    margin-top: 16px;
+    font-size: clamp(38px,  calc(38px + 32 * ((100vw - 360px) / 408)), 70px);
+    font-family: "Libre Franklin";
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.hero-wrapper .text {
+    margin-top: 32px;
+    width: 526px;
+}
+
+.hero .contact-button {
+    margin-top: 32px;
+}
+
+/* ABOUT SECTION */
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.about-wrapper {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.about-wrapper .text {
+    width: 545px;
+}
+
+.cv-button {
+    display: inline-block;
+    font-size: clamp(20px,  calc(20px + 4 * ((100vw - 360px) / 408)), 24px);
+    font-family: Inter;
+    font-weight: 700;
+    color: var(--purple);
+}
+
+.cv-button:after {
+    display: block;
+    content: "";
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+    transition: transform 250ms ease-in-out;
+    border-bottom: 3px solid var(--purple);
+}
+
+.cv-button:hover:after {
+    transform: scaleX(1);
+}
+
+/* TODO cambiare colore */
+.cv-button:focus-visible {
+    outline: 2px solid var(--black);
+}
+
+/* PROJECTS SECTION */
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 128px;
+}
+
+.project-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 64px;
+    margin-top: 64px;
+    width: 100%;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    border: 1px solid var(--grey);
+    border-radius: 28px;
+}
+
+.project:focus-visible {
+    outline: 2px solid var(--black);
+}
+
+.project-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+}
+
+.project-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+}
+
+.project-title {
+    font-size: clamp(24px, calc(24px + 11 * ((100vw - 360px) / 408)), 35px);
+    font-family: "Libre Franklin";
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.link {
+    margin-top: 8px;
+    font-size: clamp(14px, calc(14px + 4 * ((100vw - 360px) / 408)), 18px);
+    font-family: "Inter";
+    font-weight: 600;
+    color: var(--purple);
+}
+
+.project-preview {
+    margin-top: 32px;
+    width: clamp(246px, calc(246px + 136 * ((100vw - 360px) / 408)), 382px);
+    height: clamp(123px, calc(123px + 68 * ((100vw - 360px) / 408)), 191px);
+    border-radius: 28px;
+}
+
+/* CONTACT SECTION */
+
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 128px;
+    margin-bottom: 128px;
+}
+
+.contact .subheading {
+    text-align: center;
+}
+
+.contact .contact-button {
+    margin-top: 32px;
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    margin-bottom: 24px;
+}
+
+.footer-text {
+    min-width: 100px;
+    font-size: clamp(8px, calc(8px + 4 * ((100vw - 360px) / 1560)), 12px);
+    font-family: "Libre Franklin";
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.copyright {
+    font-weight: 800;
+}
+
+.social-list {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.social{
+    transition: background-color 250ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+}
+
+.social:hover {
+    background-color: var(--grey);
+}
+
+.social:focus-visible {
+    outline: 2px solid var(--black);
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--black);
+}
+
+/* RESPONSIVENESS */
+
+@media (max-width: 801px) {
+    .contact .subheading {
+        width: 487px;
+    }
+}
+
+@media (max-width: 768px) {
+    .text {
+        text-align: center;
+    }
+
+    .hero {
+        justify-content: center;
+    }
+
+    .hero-wrapper {
+        align-items: center;
+    }
+
+    .hero-wrapper .text {
+        width: 450px;
+    }
+
+    .heading {
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .about {
+        justify-content: center;
+    }
+
+    .about-wrapper {
+        align-items: center;
+    }
+
+    .about-text {
+        text-align: center;
+    }   
+}
+
+@media (max-width: 557px) {
+    .contact .subheading {
+        width: 389px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-wrapper .text {
+        width: 320px;
+    }
+    
+    .project-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 389px) {
+    .contact .subheading {
+        width: 320px;
+    }
+}
+
