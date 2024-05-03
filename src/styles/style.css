@@ -4,13 +4,13 @@
 
 /* VARIABLES */
 
-/* TODO vedere se cambiare dark-purple */
 :root {
     --purple: #9984D4;
-    --dark-purple: #544BA0;
+    --dark-purple: #8a77bf;
     --black: #25221E;
     --grey: #E6E6E6;
     --white: #FFFFFF;
+    --orange: #FFA500;
 }
 
 /* RESET */
@@ -76,14 +76,9 @@ a {
 
 /* GENERAL */
 
-::selection {
-    background-color: inherit;
-    color: var(--dark-purple);
-}
-
 .contact-button {
     flex-shrink: 0;
-    transition: filter 0.3s ease;
+    transition: background 250ms ease;
     padding-top: 17.5px;
     padding-bottom: 17.5px;
     padding-left: clamp(30px,  calc(30px + 15 * ((100vw - 360px) / 408)), 45px);
@@ -97,9 +92,8 @@ a {
     color: var(--white);
 }
 
-/* TODO fare un hover effect carino */
 .contact-button:hover {
-    filter: brightness(110%);
+    background-color: var(--dark-purple);
 }
 
 .contact-button:focus-visible {
@@ -107,7 +101,7 @@ a {
 }
 
 .subheading {
-    font-size: clamp(32px,  calc(32px + 20.5 * ((100vw - 360px) / 408)), 52.5px);
+    font-size: clamp(32px,  calc(32px + 16 * ((100vw - 360px) / 408)), 48px);
     font-family: "Libre Franklin";
     font-weight: 800;
     text-transform: uppercase;
@@ -122,12 +116,10 @@ a {
 
 /* HERO SECTION */
 
-/* FORSE cambiare dimensione a 100vh */
 .hero {
     display: flex;
     align-items: center;
-    margin-top: 308.75px;
-    margin-bottom: 308.75px;
+    margin-top: 128px;
 }
 
 .hero-wrapper {
@@ -137,14 +129,14 @@ a {
 }
 
 .signature {
-    font-size: clamp(28px,  calc(28px + 24.5 * ((100vw - 360px) / 408)), 52.5px);
+    font-size: clamp(32px,  calc(32px + 16 * ((100vw - 360px) / 408)), 48px);
     font-family: "Niconne";
     color: var(--black);
 }
 
 .heading { 
     margin-top: 16px;
-    font-size: clamp(38px,  calc(38px + 32 * ((100vw - 360px) / 408)), 70px);
+    font-size: clamp(40px,  calc(40px + 24 * ((100vw - 360px) / 408)), 64px);
     font-family: "Libre Franklin";
     font-weight: 800;
     text-transform: uppercase;
@@ -160,12 +152,27 @@ a {
     margin-top: 32px;
 }
 
+.brain {
+    position: absolute;
+    z-index: -1;
+    right: max(24px, calc(480px + 0.5 * (100vw - 1920px)));
+    width: 384px;
+    height: 344px;
+}
+
 /* ABOUT SECTION */
 
 .about {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
+    margin-top: 128px;
+}
+
+.girl {
+    margin: 0 auto;
+    width: 254px;
+    height: 344px;
 }
 
 .about-wrapper {
@@ -200,7 +207,6 @@ a {
     transform: scaleX(1);
 }
 
-/* TODO cambiare colore */
 .cv-button:focus-visible {
     outline: 2px solid var(--black);
 }
@@ -218,8 +224,9 @@ a {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 64px;
-    margin-top: 64px;
+    row-gap: 32px;
+    column-gap: 64px;
+    margin-top: 32px;
     width: 100%;
 }
 
@@ -249,7 +256,7 @@ a {
 }
 
 .project-title {
-    font-size: clamp(24px, calc(24px + 11 * ((100vw - 360px) / 408)), 35px);
+    font-size: clamp(24px, calc(24px + 8 * ((100vw - 360px) / 408)), 32px);
     font-family: "Libre Franklin";
     font-weight: 800;
     text-transform: uppercase;
@@ -258,7 +265,7 @@ a {
 
 .link {
     margin-top: 8px;
-    font-size: clamp(14px, calc(14px + 4 * ((100vw - 360px) / 408)), 18px);
+    font-size: clamp(14px, calc(14px + 4 * ((100vw - 360px) / 408)), 16px);
     font-family: "Inter";
     font-weight: 600;
     color: var(--purple);
@@ -268,6 +275,7 @@ a {
     margin-top: 32px;
     width: clamp(246px, calc(246px + 136 * ((100vw - 360px) / 408)), 382px);
     height: clamp(123px, calc(123px + 68 * ((100vw - 360px) / 408)), 191px);
+    border: 1px solid var(--grey);
     border-radius: 28px;
 }
 
@@ -344,59 +352,100 @@ footer {
 
 /* RESPONSIVENESS */
 
-@media (max-width: 801px) {
-    .contact .subheading {
-        width: 487px;
-    }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 959px) {
     .text {
         text-align: center;
     }
 
     .hero {
         justify-content: center;
+        flex-direction: column;
+        gap: 32px;
     }
 
     .hero-wrapper {
         align-items: center;
     }
 
-    .hero-wrapper .text {
-        width: 450px;
-    }
-
     .heading {
         text-align: center;
     }
 
-    .hero-text {
-        text-align: center;
+    .hero-wrapper .text {
+        width: 450px;
+    }
+
+    .brain {
+        position: relative;
+        right: auto;
+        width: 320px;
+        height: 286px;
     }
 
     .about {
         justify-content: center;
+        flex-direction: column-reverse;
+        gap: 32px;
+    }
+
+    .girl {
+        margin: 0 0;
+        width: 211px;
+        height: 286px;
     }
 
     .about-wrapper {
         align-items: center;
     }
 
-    .about-text {
-        text-align: center;
+    .about-wrapper .text {
+        width: 400px;
     }   
+
+    .contact .subheading {
+        width: 487px;
+    }
 }
 
-@media (max-width: 557px) {
+@media (max-width: 612px) {
     .contact .subheading {
         width: 389px;
     }
 }
 
 @media (max-width: 480px) {
+    .hero {
+        margin-top: 64px;
+    }
+
     .hero-wrapper .text {
         width: 320px;
+    }
+
+    .brain {
+        width: 256px;
+        height: 229px;
+    }
+
+    .about {
+        margin-top: 64px;
+    }
+
+    .girl {
+        width: 169px;
+        height: 229px;
+    }
+
+    .about-wrapper .text {
+        width: 320px;
+    }
+
+    .projects {
+        margin-top: 64px;
+    }
+
+    .project-list {
+        margin-top: 32px;
     }
     
     .project-icon {
@@ -404,11 +453,22 @@ footer {
         height: 32px;
         border-radius: 8px;
     }
+
+    .contact {
+        margin-top: 64px;
+        margin-bottom: 64px;
+    }
 }
 
 @media (max-width: 389px) {
     .contact .subheading {
         width: 320px;
+    }
+}
+
+@media (max-width: 359px) {
+    footer {
+        justify-content: center;
     }
 }
 
