@@ -7,10 +7,9 @@
 :root {
     --purple: #9984D4;
     --dark-purple: #8a77bf;
-    --black: #25221E;
-    --grey: #E6E6E6;
-    --white: #FFFFFF;
-    --orange: #FFA500;
+    --text-color: #25221E;
+    --background-color: #FFFFFF;
+    --secondary-color: #E6E6E6;
 }
 
 /* RESET */
@@ -44,7 +43,7 @@ footer, header, hgroup, menu, nav, section {
 body { 
     padding-left: max(24px, calc(480px + 0.5 * (100vw - 1920px)));
     padding-right: max(24px, calc(480px + 0.5 * (100vw - 1920px)));
-    background-color: var(--white);
+    background-color: var(--background-color);
     line-height: 1;
 }
 
@@ -76,6 +75,10 @@ a {
 
 /* GENERAL */
 
+.line {
+    fill: var(--text-color);
+}
+
 .contact-button {
     flex-shrink: 0;
     transition: background 250ms ease;
@@ -89,7 +92,7 @@ a {
     font-family: Inter;
     font-weight: 700;
     text-align: center;
-    color: var(--white);
+    color: #FFFFFF;
 }
 
 .contact-button:hover {
@@ -97,21 +100,36 @@ a {
 }
 
 .contact-button:focus-visible {
-    outline: 2px solid var(--black);
+    outline: 2px solid var(--text-color);
 }
 
-.subheading {
+.section-heading {
     font-size: clamp(32px,  calc(32px + 16 * ((100vw - 360px) / 408)), 48px);
     font-family: "Libre Franklin";
     font-weight: 800;
     text-transform: uppercase;
-    color: var(--black);
+    color: var(--text-color);
+}
+
+.tertiary-heading {
+    font-size: clamp(24px, calc(24px + 8 * ((100vw - 360px) / 408)), 32px);
+    font-family: "Libre Franklin";
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+
+.subheading {
+    font-size: clamp(14px, calc(14px + 4 * ((100vw - 360px) / 408)), 16px);
+    font-family: "Inter";
+    font-weight: 600;
+    color: var(--purple);
 }
 
 .text {
     font-size: clamp(18px,  calc(18px + 2 * ((100vw - 360px) / 408)), 20px);
     font-family: "Inter";
-    color: var(--black);
+    color: var(--text-color);
 }
 
 /* HERO SECTION */
@@ -131,7 +149,7 @@ a {
 .signature {
     font-size: clamp(32px,  calc(32px + 16 * ((100vw - 360px) / 408)), 48px);
     font-family: "Niconne";
-    color: var(--black);
+    color: var(--text-color);
 }
 
 .heading { 
@@ -140,7 +158,7 @@ a {
     font-family: "Libre Franklin";
     font-weight: 800;
     text-transform: uppercase;
-    color: var(--black);
+    color: var(--text-color);
 }
 
 .hero-wrapper .text {
@@ -152,12 +170,19 @@ a {
     margin-top: 32px;
 }
 
-.brain {
+.hero-image {
     position: absolute;
-    z-index: -1;
     right: max(24px, calc(480px + 0.5 * (100vw - 1920px)));
     width: 384px;
     height: 344px;
+}
+
+#bulb {
+    cursor: pointer;
+}
+
+.dark-bulb {
+    fill: var(--background-color);
 }
 
 /* ABOUT SECTION */
@@ -208,7 +233,7 @@ a {
 }
 
 .cv-button:focus-visible {
-    outline: 2px solid var(--black);
+    outline: 2px solid var(--text-color);
 }
 
 /* PROJECTS SECTION */
@@ -234,12 +259,13 @@ a {
     display: flex;
     flex-direction: column;
     padding: 32px;
-    border: 1px solid var(--grey);
+    border: 1px solid var(--secondary-color);
     border-radius: 28px;
 }
 
 .project:focus-visible {
-    outline: 2px solid var(--black);
+    outline: 2px solid;
+    outline-color: var(--text-color);
 }
 
 .project-wrapper {
@@ -255,27 +281,15 @@ a {
     border-radius: 14px;
 }
 
-.project-title {
-    font-size: clamp(24px, calc(24px + 8 * ((100vw - 360px) / 408)), 32px);
-    font-family: "Libre Franklin";
-    font-weight: 800;
-    text-transform: uppercase;
-    color: var(--black);
-}
-
-.link {
+.project .subheading {
     margin-top: 8px;
-    font-size: clamp(14px, calc(14px + 4 * ((100vw - 360px) / 408)), 16px);
-    font-family: "Inter";
-    font-weight: 600;
-    color: var(--purple);
 }
 
 .project-preview {
     margin-top: 32px;
     width: clamp(246px, calc(246px + 136 * ((100vw - 360px) / 408)), 382px);
     height: clamp(123px, calc(123px + 68 * ((100vw - 360px) / 408)), 191px);
-    border: 1px solid var(--grey);
+    border: 1px solid var(--secondary-color);
     border-radius: 28px;
 }
 
@@ -290,7 +304,7 @@ a {
     margin-bottom: 128px;
 }
 
-.contact .subheading {
+.contact .section-heading {
     text-align: center;
 }
 
@@ -313,7 +327,7 @@ footer {
     font-family: "Libre Franklin";
     font-weight: 500;
     text-transform: uppercase;
-    color: var(--black);
+    color: var(--text-color);
 }
 
 .copyright {
@@ -337,17 +351,17 @@ footer {
 }
 
 .social:hover {
-    background-color: var(--grey);
+    background-color: var(--secondary-color);
 }
 
 .social:focus-visible {
-    outline: 2px solid var(--black);
+    outline: 2px solid var(--text-color);
 }
 
 .social-icon {
     width: 24px;
     height: 24px;
-    fill: var(--black);
+    fill: var(--text-color);
 }
 
 /* RESPONSIVENESS */
@@ -359,8 +373,6 @@ footer {
 
     .hero {
         justify-content: center;
-        flex-direction: column;
-        gap: 32px;
     }
 
     .hero-wrapper {
@@ -375,11 +387,15 @@ footer {
         width: 450px;
     }
 
+    .hero-image {
+        top: 24px;
+        right: 24px;
+        width: 96px;
+        height: 96px;
+    }
+
     .brain {
-        position: relative;
-        right: auto;
-        width: 320px;
-        height: 286px;
+        display: none;
     }
 
     .about {
@@ -399,16 +415,16 @@ footer {
     }
 
     .about-wrapper .text {
-        width: 400px;
+        width: clamp(400px, calc(400px + 368 * ((100vw - 480px) / 479)), 768px);
     }   
 
-    .contact .subheading {
+    .contact .section-heading {
         width: 487px;
     }
 }
 
 @media (max-width: 612px) {
-    .contact .subheading {
+    .contact .section-heading {
         width: 389px;
     }
 }
@@ -419,12 +435,12 @@ footer {
     }
 
     .hero-wrapper .text {
-        width: 320px;
+        width: clamp(320px, calc(320px + 40 * ((100vw - 360px) / 120)), 360px);
     }
 
-    .brain {
-        width: 256px;
-        height: 229px;
+    .hero-image {
+        width: 64px;
+        height: 64px;
     }
 
     .about {
@@ -437,7 +453,7 @@ footer {
     }
 
     .about-wrapper .text {
-        width: 320px;
+        width: clamp(320px, calc(320px + 40 * ((100vw - 360px) / 120)), 360px);
     }
 
     .projects {
@@ -461,12 +477,17 @@ footer {
 }
 
 @media (max-width: 389px) {
-    .contact .subheading {
+    .contact .section-heading {
         width: 320px;
     }
 }
 
 @media (max-width: 359px) {
+    .hero-image {
+        right: auto;
+        margin-left: 247px;
+    }
+
     footer {
         justify-content: center;
     }

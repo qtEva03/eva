@@ -12,8 +12,8 @@ const projects = await getCollection("projects");
                 <div class="project-wrapper">
                     <Image class="project-icon" src={project.data.icon.src} alt={project.data.icon.alt} />
                     <div>   
-                        <h3 class="project-title">{project.data.title}</h3>
-                        <p class="link">{project.data.link}</p>
+                        <h3 class="tertiary-heading">{project.data.title}</h3>
+                        <p class="subheading">{project.data.link}</p>
                     </div>
                 </div>
                 <Image class="project-preview" src={project.data.preview.src} alt={project.data.preview.alt} />
