@@ -414,5 +414,6 @@ footer {
 @media (max-width: 359px) {
     footer {
         justify-content: center;
+        gap: 44px;
     }
 }
