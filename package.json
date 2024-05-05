@@ -11,6 +11,8 @@
     },
     "dependencies": {
         "@astrojs/check": "^0.5.10",
+        "@fontsource-variable/inter": "^5.0.18",
+        "@fontsource-variable/libre-franklin": "^5.0.19",
         "astro": "^4.7.0",
         "typescript": "^5.4.5"
     }
