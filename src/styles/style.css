@@ -6,10 +6,11 @@
 
 :root {
     --purple: #9984D4;
-    --dark-purple: #8a77bf;
-    --text-color: #25221E;
-    --background-color: #FFFFFF;
-    --secondary-color: #E6E6E6;
+    --dark-purple: #8A77BF;
+    --light-grey: #E6E6E6;
+    --dark-grey: #5E5E5E;
+    --black: #25221E;
+    --white: #FFFFFF;
 }
 
 /* RESET */
@@ -43,29 +44,13 @@ footer, header, hgroup, menu, nav, section {
 body { 
     padding-left: max(24px, calc(480px + 0.5 * (100vw - 1920px)));
     padding-right: max(24px, calc(480px + 0.5 * (100vw - 1920px)));
-    background-color: var(--background-color);
+    background-color: var(--white);
     line-height: 1;
 }
 
 ol, 
 ul {
     list-style: none;
-}
-
-blockquote, 
-q {
-    quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: "";
-    content: none;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
 }
 
 a {
@@ -75,24 +60,17 @@ a {
 
 /* GENERAL */
 
-.line {
-    fill: var(--text-color);
-}
-
 .contact-button {
-    flex-shrink: 0;
     transition: background 250ms ease;
-    padding-top: 17.5px;
-    padding-bottom: 17.5px;
-    padding-left: clamp(30px,  calc(30px + 15 * ((100vw - 360px) / 408)), 45px);
-    padding-right: clamp(30px,  calc(30px + 15 * ((100vw - 360px) / 408)), 45px);
+    margin-top: 32px;
+    padding: 17.5px clamp(30px,  calc(30px + 15 * ((100vw - 360px) / 408)), 45px);
     border-radius: 50px;
     background-color: var(--purple);
     font-size: clamp(20px,  calc(20px + 4 * ((100vw - 360px) / 408)), 24px);
     font-family: Inter;
     font-weight: 700;
     text-align: center;
-    color: #FFFFFF;
+    color: var(--white);
 }
 
 .contact-button:hover {
@@ -100,7 +78,7 @@ a {
 }
 
 .contact-button:focus-visible {
-    outline: 2px solid var(--text-color);
+    outline: 2px solid var(--black);
 }
 
 .section-heading {
@@ -108,28 +86,13 @@ a {
     font-family: "Libre Franklin";
     font-weight: 800;
     text-transform: uppercase;
-    color: var(--text-color);
-}
-
-.tertiary-heading {
-    font-size: clamp(24px, calc(24px + 8 * ((100vw - 360px) / 408)), 32px);
-    font-family: "Libre Franklin";
-    font-weight: 800;
-    text-transform: uppercase;
-    color: var(--text-color);
-}
-
-.subheading {
-    font-size: clamp(14px, calc(14px + 4 * ((100vw - 360px) / 408)), 16px);
-    font-family: "Inter";
-    font-weight: 600;
-    color: var(--purple);
+    color: var(--black);
 }
 
 .text {
     font-size: clamp(18px,  calc(18px + 2 * ((100vw - 360px) / 408)), 20px);
     font-family: "Inter";
-    color: var(--text-color);
+    color: var(--black);
 }
 
 /* HERO SECTION */
@@ -149,16 +112,16 @@ a {
 .signature {
     font-size: clamp(32px,  calc(32px + 16 * ((100vw - 360px) / 408)), 48px);
     font-family: "Niconne";
-    color: var(--text-color);
+    color: var(--black);
 }
 
-.heading { 
+.main-heading { 
     margin-top: 16px;
     font-size: clamp(40px,  calc(40px + 24 * ((100vw - 360px) / 408)), 64px);
     font-family: "Libre Franklin";
     font-weight: 800;
     text-transform: uppercase;
-    color: var(--text-color);
+    color: var(--black);
 }
 
 .hero-wrapper .text {
@@ -166,23 +129,11 @@ a {
     width: 526px;
 }
 
-.hero .contact-button {
-    margin-top: 32px;
-}
-
 .hero-image {
     position: absolute;
     right: max(24px, calc(480px + 0.5 * (100vw - 1920px)));
     width: 384px;
     height: 344px;
-}
-
-#bulb {
-    cursor: pointer;
-}
-
-.dark-bulb {
-    fill: var(--background-color);
 }
 
 /* ABOUT SECTION */
@@ -212,16 +163,15 @@ a {
 }
 
 .cv-button {
-    display: inline-block;
     font-size: clamp(20px,  calc(20px + 4 * ((100vw - 360px) / 408)), 24px);
-    font-family: Inter;
+    font-family: "Inter";
     font-weight: 700;
     color: var(--purple);
 }
 
 .cv-button:after {
-    display: block;
     content: "";
+    display: block;
     transform: scaleX(0);
     transform-origin: 0% 50%;
     transition: transform 250ms ease-in-out;
@@ -233,7 +183,7 @@ a {
 }
 
 .cv-button:focus-visible {
-    outline: 2px solid var(--text-color);
+    outline: 2px solid var(--black);
 }
 
 /* PROJECTS SECTION */
@@ -249,48 +199,52 @@ a {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    row-gap: 32px;
-    column-gap: 64px;
-    margin-top: 32px;
+    gap: 64px;
+    margin-top: 64px;
     width: 100%;
 }
 
 .project {
     display: flex;
     flex-direction: column;
+    transition: box-shadow 250ms cubic-bezier(.4, 0, .2, 1);
     padding: 32px;
-    border: 1px solid var(--secondary-color);
+    width: clamp(246px, calc(246px + 136 * ((100vw - 360px) / 408)), 384px);
     border-radius: 28px;
 }
 
-.project:focus-visible {
-    outline: 2px solid;
-    outline-color: var(--text-color);
+.project:hover {
+    box-shadow: #00000040 0px 25px 50px -12px;
 }
 
-.project-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 16px;
+.project:focus-visible {
+    outline: 2px solid var(--black);
+}
+
+time {
+    font-family: "Inter";
+    color: var(--dark-grey);
 }
 
 .project-icon {
+    margin-top: 32px;
     width: 48px;
     height: 48px;
     border-radius: 14px;
 }
 
-.project .subheading {
-    margin-top: 8px;
+.project-title {
+    margin-top: 16px;
+    font-size: clamp(24px, calc(24px + 8 * ((100vw - 360px) / 408)), 32px);
+    font-family: "Libre Franklin";
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--black);
 }
 
-.project-preview {
-    margin-top: 32px;
-    width: clamp(246px, calc(246px + 136 * ((100vw - 360px) / 408)), 382px);
-    height: clamp(123px, calc(123px + 68 * ((100vw - 360px) / 408)), 191px);
-    border: 1px solid var(--secondary-color);
-    border-radius: 28px;
+.project .text {
+    margin-top: 8px;
+    color: var(--dark-grey);
 }
 
 /* CONTACT SECTION */
@@ -308,10 +262,6 @@ a {
     text-align: center;
 }
 
-.contact .contact-button {
-    margin-top: 32px;
-}
-
 /* FOOTER */
 
 footer {
@@ -327,7 +277,7 @@ footer {
     font-family: "Libre Franklin";
     font-weight: 500;
     text-transform: uppercase;
-    color: var(--text-color);
+    color: var(--black);
 }
 
 .copyright {
@@ -337,65 +287,61 @@ footer {
 .social-list {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
 }
 
-.social{
-    transition: background-color 250ms;
+.social {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 250ms;
     width: 48px;
     height: 48px;
     border-radius: 14px;
 }
 
 .social:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--light-grey);
 }
 
 .social:focus-visible {
-    outline: 2px solid var(--text-color);
+    outline: 2px solid var(--black);
 }
 
 .social-icon {
     width: 24px;
     height: 24px;
-    fill: var(--text-color);
+    fill: var(--black);
 }
 
 /* RESPONSIVENESS */
 
 @media (max-width: 959px) {
-    .text {
-        text-align: center;
-    }
-
     .hero {
         justify-content: center;
+        flex-direction: column;
+        gap: 32px;
     }
 
     .hero-wrapper {
         align-items: center;
     }
 
-    .heading {
+    .main-heading {
         text-align: center;
     }
 
     .hero-wrapper .text {
         width: 450px;
+        text-align: center;
     }
 
     .hero-image {
-        top: 24px;
-        right: 24px;
-        width: 96px;
-        height: 96px;
-    }
-
-    .brain {
-        display: none;
+        position: relative;
+        right: auto;
+        width: 320px;
+        height: 286px;
     }
 
     .about {
@@ -416,16 +362,11 @@ footer {
 
     .about-wrapper .text {
         width: clamp(400px, calc(400px + 368 * ((100vw - 480px) / 479)), 768px);
+        text-align: center;
     }   
 
     .contact .section-heading {
-        width: 487px;
-    }
-}
-
-@media (max-width: 612px) {
-    .contact .section-heading {
-        width: 389px;
+        width: clamp(389px, calc(389px + 98 * ((100vw - 480px) / 479)), 487px);
     }
 }
 
@@ -439,8 +380,8 @@ footer {
     }
 
     .hero-image {
-        width: 64px;
-        height: 64px;
+        width: 256px;
+        height: 229px;
     }
 
     .about {
@@ -460,36 +401,18 @@ footer {
         margin-top: 64px;
     }
 
-    .project-list {
-        margin-top: 32px;
-    }
-    
-    .project-icon {
-        width: 32px;
-        height: 32px;
-        border-radius: 8px;
-    }
-
     .contact {
         margin-top: 64px;
         margin-bottom: 64px;
     }
-}
 
-@media (max-width: 389px) {
     .contact .section-heading {
-        width: 320px;
+        width: clamp(320px, calc(320px + 40 * ((100vw - 360px) / 120)), 360px);;
     }
 }
 
 @media (max-width: 359px) {
-    .hero-image {
-        right: auto;
-        margin-left: 247px;
-    }
-
     footer {
         justify-content: center;
     }
 }
-

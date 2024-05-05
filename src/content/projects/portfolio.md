@@ -1,7 +1,8 @@
 ---
 href: ""
+datetime: "2024-05-05"
+date: 5 Maggio, 2024
 icon: { "src": "./Rectangle16.png", "alt": "Icona portfolio" }
 title: "Portfolio"
-link: "evaevangelisti.com"
-preview: { "src": "./portfolio_preview.png", "alt": "Preview portfolio" }
 ---
+Il mio sito web personale.

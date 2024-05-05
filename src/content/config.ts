@@ -4,16 +4,13 @@ const projectCollection = defineCollection({
     type: "content",
     schema: ({ image }) => z.object({
         href: z.string(),
+        datetime: z.string(),
+        date: z.string(),
         icon: z.object({
             src: image(),
             alt: z.string(),
         }),
         title: z.string(),
-        link: z.string(),
-        preview: z.object({
-            src: image(),
-            alt: z.string(),
-        }),
     })
 });
 

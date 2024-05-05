@@ -8,15 +8,11 @@ const projects = await getCollection("projects");
 <ul class="project-list">
     { projects.map(project => (
         <li>
-            <a class="project" href={project.data.href}>
-                <div class="project-wrapper">
-                    <Image class="project-icon" src={project.data.icon.src} alt={project.data.icon.alt} />
-                    <div>   
-                        <h3 class="tertiary-heading">{project.data.title}</h3>
-                        <p class="subheading">{project.data.link}</p>
-                    </div>
-                </div>
-                <Image class="project-preview" src={project.data.preview.src} alt={project.data.preview.alt} />
+            <a class="project" href={ project.data.href }>
+                <time datetime={ project.data.datetime }>{ project.data.date }</time>
+                <Image class="project-icon" src={ project.data.icon.src } alt={ project.data.icon.alt } />
+                <h3 class="project-title">{ project.data.title }</h3>
+                <p class="text">{ project.body }</p>
             </a>
         </li>
     )) }
