@@ -110,9 +110,26 @@ a {
 }
 
 .signature {
-    font-size: clamp(32px,  calc(32px + 16 * ((100vw - 360px) / 408)), 48px);
-    font-family: "Niconne";
-    color: var(--black);
+    width: 412px;
+    height: 57px;
+}
+
+.eva-evangelisti {
+    animation: draw 2500ms ease;
+    animation-fill-mode: forwards;
+    stroke-dasharray: 1435;
+    stroke-dashoffset: 1435;
+}
+
+.dot {
+    stroke-dasharray: 14;
+    stroke-dashoffset: 14;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
 }
 
 .main-heading { 
@@ -328,6 +345,11 @@ footer {
         align-items: center;
     }
 
+    .signature {
+        width: 298px;
+        height: 42px;
+    }
+
     .main-heading {
         text-align: center;
     }
@@ -373,6 +395,11 @@ footer {
 @media (max-width: 480px) {
     .hero {
         margin-top: 64px;
+    }
+
+    .signature {
+        width: 227px;
+        height: 32px;
     }
 
     .hero-wrapper .text {
