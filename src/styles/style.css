@@ -1,6 +1,6 @@
 /* FONTS */
 
-@import url("https://fonts.googleapis.com/css2?family=Niconne&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&display=swap");
+@import url("//fonts.googleapis.com/css2?&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&display=swap");
 
 /* VARIABLES */
 
@@ -67,7 +67,7 @@ a {
     border-radius: 50px;
     background-color: var(--purple);
     font-size: clamp(20px,  calc(20px + 4 * ((100vw - 360px) / 408)), 24px);
-    font-family: Inter;
+    font-family: "Inter", sans-serif;
     font-weight: 700;
     text-align: center;
     color: var(--white);
@@ -83,7 +83,7 @@ a {
 
 .section-heading {
     font-size: clamp(32px,  calc(32px + 16 * ((100vw - 360px) / 408)), 48px);
-    font-family: "Libre Franklin";
+    font-family: "Libre Franklin", sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     color: var(--black);
@@ -91,7 +91,7 @@ a {
 
 .text {
     font-size: clamp(18px,  calc(18px + 2 * ((100vw - 360px) / 408)), 20px);
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     color: var(--black);
 }
 
@@ -135,7 +135,7 @@ a {
 .main-heading { 
     margin-top: 16px;
     font-size: clamp(40px,  calc(40px + 24 * ((100vw - 360px) / 408)), 64px);
-    font-family: "Libre Franklin";
+    font-family: "Libre Franklin", sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     color: var(--black);
@@ -181,7 +181,7 @@ a {
 
 .cv-button {
     font-size: clamp(20px,  calc(20px + 4 * ((100vw - 360px) / 408)), 24px);
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-weight: 700;
     color: var(--purple);
 }
@@ -239,7 +239,7 @@ a {
 }
 
 time {
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     color: var(--dark-grey);
 }
 
@@ -253,7 +253,7 @@ time {
 .project-title {
     margin-top: 16px;
     font-size: clamp(24px, calc(24px + 8 * ((100vw - 360px) / 408)), 32px);
-    font-family: "Libre Franklin";
+    font-family: "Libre Franklin", sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     color: var(--black);
@@ -291,7 +291,7 @@ footer {
 .footer-text {
     min-width: 100px;
     font-size: clamp(8px, calc(8px + 4 * ((100vw - 360px) / 1560)), 12px);
-    font-family: "Libre Franklin";
+    font-family: "Libre Franklin", sans-serif;
     font-weight: 500;
     text-transform: uppercase;
     color: var(--black);
