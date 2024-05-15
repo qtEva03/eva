@@ -85,10 +85,24 @@ a {
     color: var(--black);
 }
 
+.subheading {
+    font-size: clamp(24px, calc(24px + 8 * ((100vw - 360px) / 408)), 32px);
+    font-family: "Libre Franklin Variable", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
 .text {
     font-size: clamp(18px,  calc(18px + 2 * ((100vw - 360px) / 408)), 20px);
     font-family: "Inter Variable", sans-serif;
     color: var(--black);
+}
+
+.highlighted {
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--purple);
 }
 
 /* HERO SECTION */
@@ -199,6 +213,41 @@ a {
     outline: 2px solid var(--black);
 }
 
+/* PHASES SECTION */
+
+.phases {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 128px;
+}
+
+.phases-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 244px;
+}
+
+.phase {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.phase .text {
+    width: 500px;
+}
+
+.phase-image {
+    display: none;
+}
+
+.phases-image {
+    margin: 0 auto;
+    width: 188px;
+    height: 1536px;
+}
+
+
 /* PROJECTS SECTION */
 
 .projects {
@@ -246,13 +295,8 @@ time {
     border-radius: 14px;
 }
 
-.project-title {
+.project .subheading {
     margin-top: 16px;
-    font-size: clamp(24px, calc(24px + 8 * ((100vw - 360px) / 408)), 32px);
-    font-family: "Libre Franklin Variable", sans-serif;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: var(--black);
 }
 
 .project .text {
@@ -383,6 +427,47 @@ footer {
         text-align: center;
     }   
 
+    .phases {
+        justify-content: center;
+    }
+
+    .phases-wrapper {
+        align-items: center;
+        gap: 64px;
+    }
+
+    .phase {
+        align-items: center;
+    }
+
+    .phases-wrapper .text {
+        width: clamp(400px, calc(400px + 240 * ((100vw - 480px) / 479)), 640px);
+        text-align: center;
+    }   
+
+    .phase-image {
+        display: block;
+    }
+
+    #pencil {
+        width: 201px;
+        height: 286px;
+    }
+
+    #laptop {
+        width: 333px;
+        height: 286px;
+    }
+
+    #server {
+        width: 201px;
+        height: 286px;
+    }
+
+    .phases-image {
+        display: none;
+    }
+
     .contact .section-heading {
         width: clamp(389px, calc(389px + 98 * ((100vw - 480px) / 479)), 487px);
     }
@@ -418,6 +503,41 @@ footer {
 
     .about-wrapper .text {
         width: clamp(320px, calc(320px + 40 * ((100vw - 360px) / 120)), 360px);
+    }
+
+    .phases {
+        margin-top: 64px;
+    }
+
+    .phases-wrapper {
+        gap: 32px;
+    }
+
+    .phases-wrapper .section-heading {
+        text-align: center;
+    }
+
+    .phase {
+        gap: 16px;
+    }
+
+    .phase .text {
+        width: clamp(320px, calc(320px + 40 * ((100vw - 360px) / 120)), 360px);
+    }
+
+    #pencil {
+        width: 161px;
+        height: 229;
+    }
+
+    #laptop {
+        width: 267px;
+        height: 229px;
+    }
+
+    #server {
+        width: 167px;
+        height: 229px;
     }
 
     .projects {
