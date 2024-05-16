@@ -209,20 +209,20 @@ a {
 
 .phases {
     display: flex;
-    justify-content: space-between;
-    margin-top: 128px;
-}
-
-.phases-wrapper {
-    display: flex;
     flex-direction: column;
-    gap: 128px;
+    gap: 64px;
+    margin-top: 128px;
 }
 
 .phase {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     gap: 32px;
+}
+
+.phase:nth-child(3) {
+    flex-direction: row-reverse;
 }
 
 .phase .text {
@@ -230,12 +230,22 @@ a {
 }
 
 .phase-image {
-    display: none;
+    margin: 0 auto;
 }
 
-.phases-image {
-    margin: 0 auto;
-    height: 896px;
+#pencil {
+    width: 201px;
+    height: 286px;
+}
+
+#laptop {
+    width: 333px;
+    height: 286px;
+}
+
+#server {
+    width: 201px;
+    height: 286px;
 }
 
 /* PROJECTS SECTION */
@@ -423,20 +433,21 @@ footer {
     }   
 
     .phases {
+        align-items: center;
         justify-content: center;
     }
 
-    .phases-wrapper {
-        align-items: center;
-        gap: 64px;
-    }
-
-    .phases-wrapper .section-heading {
+    .phases .section-heading {
         margin-bottom: -32px;
     }
 
     .phase {
         align-items: center;
+        flex-direction: column;
+    }
+
+    .phase:nth-child(3) {
+        flex-direction: column;
     }
 
     .phase .text {
@@ -444,27 +455,19 @@ footer {
         text-align: center;
     }   
 
-    .phase-image {
-        display: block;
-    }
-
     #pencil {
-        width: 201px;
-        height: 286px;
+        width: 161px;
+        height: 229px;
     }
 
     #laptop {
-        width: 333px;
-        height: 286px;
+        width: 267px;
+        height: 229px;
     }
 
     #server {
-        width: 201px;
-        height: 286px;
-    }
-
-    .phases-image {
-        display: none;
+        width: 167px;
+        height: 229px;
     }
 
     .contact .section-heading {
@@ -508,7 +511,7 @@ footer {
         margin-top: 64px;
     }
 
-    .phases-wrapper .section-heading {
+    .phases .section-heading {
         text-align: center;
     }
 
@@ -517,18 +520,18 @@ footer {
     }
 
     #pencil {
-        width: 161px;
-        height: 229px;
+        width: 122px;
+        height: 173px;
     }
 
     #laptop {
-        width: 267px;
-        height: 229px;
+        width: 201px;
+        height: 173px;
     }
 
     #server {
-        width: 167px;
-        height: 229px;
+        width: 126px;
+        height: 173px;
     }
 
     .projects {
